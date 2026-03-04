@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cflmtf0ygqiib"]
+
+[ext_resource type="Script" uid="uid://d11dr55l4oi03" path="res://Mods/ModelMover/ModelMover.gd" id="1_xtfkf"]
+[ext_resource type="Script" uid="uid://b3ca1nqlq2pcx" path="res://Mods/ModelMover/CameraControl.gd" id="2_ucjlj"]
+[ext_resource type="Script" uid="uid://cw87wvjex6ixs" path="res://Mods/ModelMover/MultiplayerSupport.gd" id="3_h32hs"]
+
+[node name="ModelMover" type="Node3D"]
+script = ExtResource("1_xtfkf")
+metadata/_custom_type_script = "uid://bsjotf2wtnmeq"
+
+[node name="CameraControl" type="Node" parent="."]
+script = ExtResource("2_ucjlj")
+
+[node name="MultiplayerSupport" type="Node" parent="."]
+script = ExtResource("3_h32hs")

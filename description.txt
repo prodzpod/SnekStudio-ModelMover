@@ -1,0 +1,2 @@
+Lets you move and rotate models manually. Saves position and rotation of models in config.
+Works with multiplayer, requires other members to have nicknames to be saved.
