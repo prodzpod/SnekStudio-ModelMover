@@ -7,7 +7,7 @@ var lock_camera := false
 var camera_speed := 1.0
 var initial_setting
 func _ready() -> void:
-	add_tracked_setting("camera_speed", "Camera Speed")
+	add_tracked_setting("camera_speed", "Camera Speed", { "min": 0.0, "max": 10.0, "step": 0.1 })
 	_add_config_button("Face Camera", face_camera)
 	_add_config_button("Face Camera (Local)", face_camera_local)
 	add_tracked_setting("lock_camera", "Lock Transforms")
