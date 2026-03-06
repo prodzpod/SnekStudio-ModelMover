@@ -83,7 +83,7 @@ func copy_setting() -> Dictionary:
 	var camera = get_viewport().get_camera_3d().get_parent()
 	var cp = camera.global_position
 	var cr = camera.rotation
-	ret.camera = { "position": [cp.x, cp.y, cp.z], "rotation": [cr.x, cr.y, cr.z] }
+	ret.camera = { "position": [cp.x, cp.y, cp.z, camera.get_child(0).position.z], "rotation": [cr.x, cr.y, cr.z] }
 	ret.remote = $MultiplayerSupport.copy_transforms()
 	return ret
 
@@ -100,6 +100,7 @@ func load_setting(setting: Dictionary):
 	local_area.reorient_model(setting.local.rotation)
 	var camera = get_viewport().get_camera_3d().get_parent()
 	camera.global_position = Vector3(setting.camera.position[0], setting.camera.position[1], setting.camera.position[2])
+	camera.get_child(0).position.z = setting.camera.position[3]
 	camera.rotation = Vector3(setting.camera.rotation[0], setting.camera.rotation[1], setting.camera.rotation[2])
 	$MultiplayerSupport.load_transforms(setting.remote)
 
