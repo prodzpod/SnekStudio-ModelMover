@@ -79,7 +79,7 @@ func copy_setting_to_clipboard():
 func copy_setting() -> Dictionary:
 	var ret = {}
 	var lp = local_area.global_position
-	ret.local = { "position": [lp.x, lp.y, lp.z], "rotation": get_skeleton().global_rotation.y }
+	ret.local = { "position": [lp.x, lp.y, lp.z], "rotation": get_skeleton().get_child(0).rotation.y }
 	var camera = get_viewport().get_camera_3d().get_parent()
 	var cp = camera.global_position
 	var cr = camera.rotation
